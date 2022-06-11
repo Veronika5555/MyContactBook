@@ -1,0 +1,20 @@
+﻿@model Person
+
+<a asp-controller="Home" asp-action="Index">Home</a>
+
+<h2>
+    Details about @Model.Name @Model.Surname
+</h2>
+
+<div>
+    <table>
+        <tr>
+            <td>Phone Number</td>
+            <td>@Model.PhoneNumber</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Model.Email</td>
+        </tr>
+    </table>
+</div>

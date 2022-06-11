@@ -1,0 +1,30 @@
+﻿@model List<Person>
+
+<a asp-controller="Home" asp-action="Edit">Create a new contact</a>
+
+<h2>My Contact Book</h2>
+
+<div>
+    <table>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td> @person.Name   </td>
+                <td> @person.Surname  </td>
+
+                <td><a asp-controller="Home" asp-action="Display" asp-route-id="@person.Id">More info</a></td>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@person.Id">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Remove" asp-route-id="@person.Id" onclick="return confirm('Are you sure you want to delete this contact?');">Delete</a></td>
+                <!--  <td><button onclick="ConfirmDelete()" asp-controller="Home" asp-action="Remove" asp-route-id="@person.Id"> Delete</button></td> -->
+            </tr>
+        }
+    </table>
+</div>
+
+<!--
+<script>
+    function ConfirmDelete() {
+        return confirm("Are you sure you want to delete this contact?");
+    }
+</script>
+-->
